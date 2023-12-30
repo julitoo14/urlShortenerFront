@@ -1,14 +1,73 @@
-*{
-  text-align: center;
+.App {
+  background-color: #353333; /* Color de fondo de la aplicación */
+  height: 100vh; /* Altura completa de la vista */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif; /* Fuente de la aplicación */
 }
 
-.input{
+h1{
+  margin-bottom: 5em;
+}
+
+h1, h2 {
+  color: #ffffff; /* Color del título */
+}
+
+p {
+  color: #d6d1d1; /* Color del párrafo */
+}
+
+a{
+  color: #ffffff; /* Color del enlace */
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.input {
+  color: #000000;
   width: 60%;
   height: 2em;
   margin-bottom: 1em;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  padding: 0.5em; /* Espacio interior alrededor del texto */
+  text-align: center;
 }
 
-.button{
+.input:focus {
+  border-color: #000000;
+  color: #000000;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(62, 76, 87, 0.5);
+}
+
+.button {
   width: 30%;
   height: 2em;
+  background-color: #ffffff; /* Color de fondo del botón */
+  color: #000000; /* Color del texto del botón */
+  border: none; /* Elimina el borde del botón */
+  border-radius: 4px; /* Hace que las esquinas del botón sean redondeadas */
+  cursor: pointer; /* Cambia el cursor a un puntero cuando se pasa por encima del botón */
+  margin-bottom: 5em;
+}
+
+.button:hover {
+  background-color: #b0acac; /* Cambia el color de fondo del botón cuando se pasa por encima */
+}
+
+.footer {
+  color: #b1acac; /* Color del texto "Made By Julitoo14" */
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
 }

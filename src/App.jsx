@@ -40,7 +40,11 @@ function App() {
         
       </>) : null}
       
-      <h5>Made By Julitoo14</h5>
+      <div className='footer'>
+        <h5><a href='https://tinyurl-qcor.onrender.com/KDuO5tr3x' rel='noreferrer' target='_BLANK'>Linkedin</a></h5>
+        <h5><a href='https://tinyurl-qcor.onrender.com/Q5vwK-7Ph' rel='noreferrer' target='_BLANK'>Julian Garcia Projects</a></h5>
+        <h5><a href='https://tinyurl-qcor.onrender.com/egzmvQPMa' rel='noreferrer' target='_BLANK'>Github</a></h5>
+      </div>
     </div>
   );
 }
