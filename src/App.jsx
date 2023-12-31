@@ -1,12 +1,22 @@
 import './App.css';
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
 
   const url = 'https://tinyurl-qcor.onrender.com'
   const [inputUrl, setInputUrl] = useState('');
   const [shortenedUrl, setShortenedUrl] = useState(''); 
+  const [urls, setUrls] = useState([]);
+
+  useEffect(() => {
+    getUrls();
+  }, [urls])
+
+  const getUrls = async () => {
+    const response = await axios.get(`${url}/api/urls`)
+    setUrls(response.data)
+  }
 
   const shortUrl = async (e) => {
     e.preventDefault()
@@ -39,6 +49,18 @@ function App() {
         <h3><a href={shortenedUrl} rel='noreferrer' target='_BLANK'>{shortenedUrl}</a> <button onClick={copyToClipboard}>Copy</button></h3>
         
       </>) : null}
+
+      {
+        urls.map((url) => {
+          return (
+            <div className='url-container'>
+              <h4><a href={url.longUrl} rel='noreferrer' target='_BLANK'>{url.longUrl}</a></h4>
+              <h5><a href={url.shortUrl} rel='noreferrer' target='_BLANK'>{url.shortUrl}</a></h5>
+              <h5>clicks: {url.cliks}</h5>
+            </div>
+          )
+        })
+      }
       
       <div className='footer'>
         <h5><a href='https://tinyurl-qcor.onrender.com/KDuO5tr3x' rel='noreferrer' target='_BLANK'>Linkedin</a></h5>
