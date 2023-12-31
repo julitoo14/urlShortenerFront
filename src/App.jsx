@@ -15,6 +15,7 @@ function App() {
 
   const getUrls = async () => {
     const response = await axios.get(`${url}/api/urls`)
+    console.log(response)
     setUrls(response.data)
   }
 
